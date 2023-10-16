@@ -21,6 +21,22 @@ from func_menu_car import (
 
 def main():
     print("Welcome to the Cape Coral Deeler CLI!!!")
+    print("   ----------------------------------------- ")
+    print("  |  HHHH                             HHHH  |")
+    print("  |  HHHHH                           HHHHH  |")
+    print("  |   HHHHH                         HHHHH   |")
+    print("  |    HHHHH                       HHHHH    |")
+    print("  |    HHHHHHH                   HHHHHHH    |")
+    print("  |     HHHHHHHH               HHHHHHHH     |")
+    print("  |     HHHHHHHHH             HHHHHHHHH     |")
+    print("  |     HHHHHHHHHHHhhhhhhhhhHHHHHHHHHHH     |")
+    print("  |     HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH     |")
+    print("  |      HHHHHHH               HHHHHHH      |")
+    print("  |      HHHHHH                 HHHHHH      |")
+    print("  |      HHHHH                   HHHHH      |")
+    print("   ----------------------------------------- ")
+
+
     while True:
         menu()
         choice = input("> ")
