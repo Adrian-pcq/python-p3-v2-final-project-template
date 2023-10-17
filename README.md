@@ -4,7 +4,7 @@
 
 ## Intorduction 
 
-This code uses all the skills learnd in this phase:
+This code uses all the skills learned in this phase:
 - Python fundamentals.
 - Data structures (and more recently, algorithms).
 - Object-oriented programming.
