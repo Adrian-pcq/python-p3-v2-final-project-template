@@ -20,12 +20,16 @@ from func_menu_car import (
 
 
 def main():
-    print("Welcome to the Cape Coral Deeler CLI!!!")
+    print(" ")
+    print(" ")
+    print("         Welcome to the Deeler CLI!!!")
     print("   ----------------------------------------- ")
+    print("  |  HH                                 HH  |")
+    print("  |  HHH                               HHH  |")
     print("  |  HHHH                             HHHH  |")
-    print("  |  HHHHH                           HHHHH  |")
+    print("  |   HHHH                           HHHH   |")
     print("  |   HHHHH                         HHHHH   |")
-    print("  |    HHHHH                       HHHHH    |")
+    print("  |    HHHHHH                     HHHHHH    |")
     print("  |    HHHHHHH                   HHHHHHH    |")
     print("  |     HHHHHHHH               HHHHHHHH     |")
     print("  |     HHHHHHHHH             HHHHHHHHH     |")
