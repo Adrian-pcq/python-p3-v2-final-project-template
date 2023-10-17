@@ -22,7 +22,7 @@ from func_menu_car import (
 def main():
     print(" ")
     print(" ")
-    print("         Welcome to the Deeler CLI!!!")
+    print("         Welcome to the Dealer CLI!!!")
     print("   ----------------------------------------- ")
     print("  |  HH                                 HH  |")
     print("  |  HHH                               HHH  |")

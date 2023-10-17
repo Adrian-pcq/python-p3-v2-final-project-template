@@ -1,10 +1,10 @@
-# Phase 3 Project: Cape Coral Deeler CLI 
+# Phase 3 Project: Cape Coral Dealer CLI 
 
 ---
 
-## Intorduction 
+## Introduction 
 
-This code uses all the skills learnd in this phase:
+This code uses all the skills learned in this phase:
 - Python fundamentals.
 - Data structures (and more recently, algorithms).
 - Object-oriented programming.
