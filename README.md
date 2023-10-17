@@ -1,172 +1,41 @@
-# Phase 3 CLI+ORM Project Template
-
-## Learning Goals
-
-- Discuss the basic directory structure of a CLI.
-- Outline the first steps in building a CLI.
+# Phase 3 Project: Cape Coral Deeler CLI 
 
 ---
 
-## Introduction
+## Intorduction 
 
-You now have a basic idea of what constitutes a CLI. Fork and clone this lesson
-for a project template for your CLI.
+This code uses all the skills learnd in this phase:
+- Python fundamentals.
+- Data structures (and more recently, algorithms).
+- Object-oriented programming.
+- Object inheritance.
+- Instance and class attributes and methods.
+- Configuring applications.
+- SQL fundamentals.
+- Table relations in SQL.
+- Object-relational mapping with Python.
+- Building CLIs.
 
-Take a look at the directory structure:
-
-```console
-.
-├── Pipfile
-├── Pipfile.lock
-├── README.md
-└── lib
-    ├── models
-    │   ├── __init__.py
-    │   └── model_1.py
-    ├── cli.py
-    ├── debug.py
-    └── helpers.py
-```
-
-Note: The directory also includes two files named `CONTRIBUTING.md` and
-`LICENSE.md` that are specific to Flatiron's curriculum. You can disregard or
-delete the files if you want.
+It's a CLI APP that contains information about available cars and the factories they belong to. Comes with multiples functionalities for the user. 
 
 ---
 
-## Generating Your Environment
+## Description
 
-You might have noticed in the file structure- there's already a Pipfile!
+The application uses classes and a one-to-many relationship to manage factories and cars. The Factory class represents a factory with its identifier and name, while the Car class represents a car with its identifier, model, year, weight and the identifier of the factory it belongs to.
 
-Install any additional dependencies you know you'll need for your project by
-adding them to the `Pipfile`. Then run the commands:
+The application interacts with the SQLite database to perform CRUD operations on the factories and cars tables.
 
-```console
-pipenv install
-pipenv shell
-```
+The application displays a menu with options to perform different operations related to factories and cars. The user can select an option and provide the necessary data to carry out the desired operation. For example, they can list all existing factories, create a new factory, search for a factory by its identifier or name, update an existing factory, or delete a factory.
 
----
+Similarly, the user can perform operations related to cars, such as listing all existing cars, creating a new car, searching for a car by its identifier or model, updating an existing car, or deleting a car.
 
-## Generating Your CLI
-
-A CLI is, simply put, an interactive script and prompts the user and performs
-operations based on user input.
-
-The project template has a sample CLI in `lib/cli.py` that looks like this:
-
-```py
-# lib/cli.py
-
-from helpers import (
-    exit_program,
-    helper_1
-)
-
-
-def main():
-    while True:
-        menu()
-        choice = input("> ")
-        if choice == "0":
-            exit_program()
-        elif choice == "1":
-            helper_1()
-        else:
-            print("Invalid choice")
-
-
-def menu():
-    print("Please select an option:")
-    print("0. Exit the program")
-    print("1. Some useful function")
-
-
-if __name__ == "__main__":
-    main()
-```
-
-The helper functions are located in `lib/helpers.py`:
-
-```py
-# lib/helpers.py
-
-def helper_1():
-    print("Performing useful function#1.")
-
-
-def exit_program():
-    print("Goodbye!")
-    exit()
-```
-
-You can run the template CLI with `python lib/cli.py`, or include the shebang
-and make it executable with `chmod +x`. The template CLI will ask for input, do
-some work, and accomplish some sort of task.
-
-Past that, CLIs can be whatever you'd like, as long as you follow the project
-requirements.
-
-Of course, you will update `lib/cli.py` with prompts that are appropriate for
-your application, and you will update `lib/helpers.py` to replace `helper_1()`
-with a useful function based on the specific problem domain you decide to
-implement, along with adding other helper functions to the module.
-
-In the `lib/models` folder, you should rename `model_1.py` with the name of a
-data model class from your specific problem domain, and add other classes to the
-folder as needed. The file `lib/models/__init__.py` has been initialized to
-create the necessary database constants. You need to add import statements to
-the various data model classes in order to use the database constants.
-
-You are also welcome to implement a different module and directory structure.
-However, your project should be well organized, modular, and follow the design
-principal of separation of concerns, which means you should separate code
-related to:
-
-- User interface
-- Data persistence
-- Problem domain rules and logic
+In summary, the implemented application allows managing factories and cars using classes and a one-to-many relationship through a SQLite database. The user can perform different operations related to factories and cars through an interactive menu.
 
 ---
 
-## Updating README.md
+## Structure
 
-`README.md` is a Markdown file that should describe your project. You will
-replace the contents of this `README.md` file with a description of **your**
-actual project.
+The `lib/menu.py`file contains the implementation of the menu, which uses functions from `func_menu_car.py` and `func_menu_factory.py` to perform tasks. In `data.py`, the persistent information related to the database is stored. In `lib/model/_init_.py`, the application's connection to SQLite is created. Factory and Car classes are stored in `lib/model/factory.py` and `lib/model/car.py`respectively.  
 
-Markdown is not a language that we cover in Flatiron's Software Engineering
-curriculum, but it's not a particularly difficult language to learn (if you've
-ever left a comment on Reddit, you might already know the basics). Refer to the
-cheat sheet in this assignments's resources for a basic guide to Markdown.
 
-### What Goes into a README?
-
-This README serves as a template. Replace the contents of this file to describe
-the important files in your project and describe what they do. Each Python file
-that you edit should get at least a paragraph, and each function should be
-described with a sentence or two.
-
-Describe your actual CLI script first, and with a good level of detail. The rest
-should be ordered by importance to the user. (Probably functions next, then
-models.)
-
-Screenshots and links to resources that you used throughout are also useful to
-users and collaborators, but a little more syntactically complicated. Only add
-these in if you're feeling comfortable with Markdown.
-
----
-
-## Conclusion
-
-A lot of work goes into a good CLI, but it all relies on concepts that you've
-practiced quite a bit by now. Hopefully this template and guide will get you off
-to a good start with your Phase 3 Project.
-
-Happy coding!
-
----
-
-## Resources
-
-- [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
