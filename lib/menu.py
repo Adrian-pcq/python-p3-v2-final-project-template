@@ -45,7 +45,20 @@ def main():
         menu()
         choice = input("> ")
         if choice == "0":
-            print("I hope you enjoyed it a lot!!!")
+            print("")
+            print("")
+            print("         I hope you enjoyed it a lot!!!")
+            print("")
+            print("")
+            print(" BBBBBBBBBBB    YYY       YYY   EEEEEEEEEE   !!!!!!! ")
+            print(" BBB    BBBB     YYY     YYY    EEEEEEEEEE   !!!!!!! ")
+            print(" BBBBBBBBBBB      YYY   YYY     EEE           !!!!!  ")
+            print(" BBB               YYYYYYY      EEEEEEEEEE     !!!   ")
+            print(" BBBBBBBBBBB         YYY        EEE                  ")
+            print(" BBB    BBBB         YYY        EEEEEEEEEE     !!!   ")
+            print(" BBBBBBBBBBB         YYY        EEEEEEEEEE     !!!   ")
+            print("")
+            print("")
             exit()
         
         elif choice == "1":
