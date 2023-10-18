@@ -58,8 +58,4 @@ def factory_car():
         car = factory.cars()
         print(car)
     else:
-        print(f"Factory's id({_id}) not found!")    
-
-
-
-    
+        print(f"Factory's id({_id}) not found!")

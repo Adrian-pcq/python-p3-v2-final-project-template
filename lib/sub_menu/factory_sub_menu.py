@@ -96,5 +96,4 @@ def factory_menu():
         elif choice == "7":
             factory_car()
 
-        else:
-             print("Invalid choice!")
+        else: print("Invalid choice!")

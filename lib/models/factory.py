@@ -159,5 +159,3 @@ class Factory:
         return [
             Car.instance_from_db(row) for row in rows
         ]
-
-Factory.create_table()
