@@ -22,6 +22,7 @@ def find_car_by_id():
     _id = input("Enter car's id: ")
     car = Car.find_by_id(_id)
     print(car) if car else print("Car couldn't be found!")
+    return car
 
 def find_car_by_model():
     model = input("Enter car's model: ")
@@ -56,7 +57,23 @@ def delete_car():
     _id = input("Enter the car's id:")
     car = Car.find_by_id(_id)
     if car:
-        car.delete()
-        print(f"Successfuly deleted Car:{_id} {car.model}, {car.year}, {car.weight}, factory id:{car.factory_id}!")
+        while True:
+            print(f"Are you sure you want to delete {car}?")
+            print("0. No")
+            print("1. Yes")
+            choice = input("> ")
+            
+            if choice == "1":
+                car.delete()
+                print(f"Successfuly deleted Car:{_id} {car.model}, {car.year}, {car.weight}, factory id:{car.factory_id}!")
+                break
+            
+            elif choice == "0":
+                break
+            
+            else: print("Invalid choice!")
     else:
         print(f"Car's id({_id}) not found!")
+
+def delete_car_for_rep(car):
+    car.delete()

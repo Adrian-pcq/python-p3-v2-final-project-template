@@ -1,10 +1,13 @@
 from models.factory import Factory
 from models.car import Car
+from models.reparation import Reparation
 from models.__init__ import CONN, CURSOR
 
 def data_from_DB():
     Car.drop_table()
     Factory.drop_table()
+    Reparation.drop_table()
+    Reparation.create_table()
     Factory.create_table()
     Car.create_table()
 
