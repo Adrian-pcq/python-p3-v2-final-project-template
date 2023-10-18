@@ -1,4 +1,4 @@
-from lib.function_menu_helper.func_menu_car import (
+from function_menu_helper.func_menu_car import (
     list_cars,
     create_car,
     find_car_by_id,
@@ -6,7 +6,6 @@ from lib.function_menu_helper.func_menu_car import (
     update_car,
     delete_car,
 )
-
 
 def car_menu_print():
     print("0. Back to Main Menu")
@@ -30,11 +29,13 @@ def car_menu():
 
         elif choice == "2":
             create_car()
+            
             while True:
                 print("Do you want to create another: ")
                 print("0. No")
                 print("1. Yes")
                 choice = input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":
@@ -43,11 +44,13 @@ def car_menu():
 
         elif choice == "3":
             find_car_by_id()
+            
             while True:
                 print("Do you want to find another: ")
                 print("0. No")
                 print("1. Yes")
                 choice = input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":
@@ -56,11 +59,13 @@ def car_menu():
 
         elif choice == "4":
             find_car_by_model()
+            
             while True:
                 print("Do you want to find another: ")
                 print("0. No")
                 print("1. Yes")
                 choice = input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":
@@ -69,11 +74,13 @@ def car_menu():
 
         elif choice == "5":
             update_car()
+            
             while True:
                 print("Do you want to update another: ")
                 print("0. No")
                 print("1. Yes")
                 choice = input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":
@@ -82,11 +89,13 @@ def car_menu():
 
         elif choice == "6":
             delete_car()
+            
             while True:
                 print("Do you want to delete another: ")
                 print("0. No")
                 print("1. Yes")
                 choice = input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":

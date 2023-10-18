@@ -1,6 +1,7 @@
 from models.car import Car
 
 def list_cars():
+    
     cars = Car.get_all()
     for car in cars:
         print(car)
@@ -19,19 +20,23 @@ def create_car():
         print("Error adding car:",exc)
 
 def find_car_by_id():
+    
     _id = input("Enter car's id: ")
     car = Car.find_by_id(_id)
     print(car) if car else print("Car couldn't be found!")
     return car
 
 def find_car_by_model():
+    
     model = input("Enter car's model: ")
     car = Car.find_by_model(model)
     print(car) if car else print(f"Car model({model}) couldn't be found")
 
 def update_car():
+    
     _id = input("Enter the car's id: ")
     car = Car.find_by_id(_id)
+    
     if car:
         try:
             model = input("Enter the name: ")
@@ -48,14 +53,17 @@ def update_car():
 
             car.update()
             print(f"Successfuly updated {car}!")
+        
         except Exception as exc:
             print("Error updating car:",exc)
     else:
         print(f"Factory's id({_id}) not found!")
 
 def delete_car():
+    
     _id = input("Enter the car's id:")
     car = Car.find_by_id(_id)
+    
     if car:
         while True:
             print(f"Are you sure you want to delete {car}?")
@@ -70,10 +78,11 @@ def delete_car():
             
             elif choice == "0":
                 break
-            
             else: print("Invalid choice!")
     else:
         print(f"Car's id({_id}) not found!")
 
 def delete_car_for_rep(car):
-    car.delete()
+    if car:
+      car.delete()
+    else:print("")

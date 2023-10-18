@@ -1,4 +1,4 @@
-from lib.function_menu_helper.func_menu_reparation import (
+from function_menu_helper.func_menu_reparation import (
     list_cars_rep,
     create_car_rep,
     find_car_rep_by_id,
@@ -7,7 +7,7 @@ from lib.function_menu_helper.func_menu_reparation import (
     delete_car_rep
 )
 
-from lib.function_menu_helper.func_menu_car import ( delete_car_for_rep, find_car_by_id)
+from function_menu_helper.func_menu_car import ( delete_car_for_rep, find_car_by_id)
 
 def reparation_menu_print():
     print("0. Back to Main Menu")
@@ -22,6 +22,7 @@ def reparation_menu():
     while True:
         reparation_menu_print()
         choice = input("> ")
+        
         if choice == "0":
             break
 
@@ -30,11 +31,13 @@ def reparation_menu():
 
         elif choice == "2":
             delete_car_for_rep(create_car_rep(find_car_by_id()))
+            
             while True:
                 print("Do you want to set another?")
                 print("0. No")
                 print("1. Yes")
                 choice=input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":
@@ -43,11 +46,13 @@ def reparation_menu():
 
         elif choice =="3":
             find_car_rep_by_id()
+            
             while True:
                 print("Do you want to find another?")
                 print("0. No")
                 print("1. Yes")
                 choice=input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":
@@ -56,11 +61,13 @@ def reparation_menu():
 
         elif choice =="4":
             find_car_rep_by_model()
+            
             while True:
                 print("Do you want to find another?")
                 print("0. No")
                 print("1. Yes")
                 choice=input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":
@@ -69,11 +76,13 @@ def reparation_menu():
 
         elif choice == "5":
             find_car_by_cause()
+            
             while True:
                 print("Do you want to find another?")
                 print("0. No")
                 print("1. Yes")
                 choice=input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":
@@ -82,11 +91,13 @@ def reparation_menu():
 
         elif choice == "6":
             delete_car_rep()
+            
             while True:
                 print("Do you want to repair another?")
                 print("0. No")
                 print("1. Yes")
                 choice=input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":

@@ -1,4 +1,4 @@
-from lib.function_menu_helper.func_menu_factory import (
+from function_menu_helper.func_menu_factory import (
     list_factories,
     create_factory,
     find_factory_by_id,
@@ -22,6 +22,7 @@ def factory_menu():
     while True:
         factory_menu_print()
         choice = input("> ")
+        
         if choice == "0":
              break 
 
@@ -35,6 +36,7 @@ def factory_menu():
                 print("0. No")
                 print("1. Yes")
                 choice = input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":
@@ -48,6 +50,7 @@ def factory_menu():
                 print("0. No")
                 print("1. Yes")
                 choice = input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":
@@ -61,6 +64,7 @@ def factory_menu():
                 print("0. No")
                 print("1. Yes")
                 choice = input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":
@@ -74,6 +78,7 @@ def factory_menu():
                 print("0. No")
                 print("1. Yes")
                 choice = input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":
@@ -87,6 +92,7 @@ def factory_menu():
                 print("0. No")
                 print("1. Yes")
                 choice = input("> ")
+                
                 if choice == "0":
                     break
                 elif choice == "1":

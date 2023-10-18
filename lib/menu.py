@@ -51,6 +51,7 @@ def main():
     while True:
         menu()
         choice = input("> ")
+        
         if choice == "0":
             bye()
             exit()
