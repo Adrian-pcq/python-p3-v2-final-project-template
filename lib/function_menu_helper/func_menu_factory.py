@@ -58,8 +58,21 @@ def delete_factory():
     factory = Factory.find_by_id(_id)
     
     if factory:
-        factory.delete()
-        print(f"Successfuly deleted Factory:{_id} {factory.name} from {factory.country}!")
+        while True:
+            print(f"Are you sure to delete {factory}?")
+            print("0. No")
+            print("1. Yes")
+            choice = input("> ")
+            
+            if choice == "1":
+                factory.delete()
+                print(f"Successfuly deleted Factory:{_id} {factory.name} from {factory.country}!")
+                break
+
+            elif choice == "0": 
+                break
+            
+            else: print("Invalid choice!")
     else:
         print(f"Factory's id({_id}) not found!")
 

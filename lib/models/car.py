@@ -1,5 +1,5 @@
 from models.__init__ import CURSOR, CONN
-from models.factory import Factory
+
 
 class Car:
 
@@ -56,6 +56,7 @@ class Car:
 
     @factory_id.setter
     def factory_id(self, factory_id):
+        from models.factory import Factory
         if type(factory_id) is int and Factory.find_by_id(factory_id):
             self._factory_id = factory_id
         else:
@@ -169,3 +170,14 @@ class Car:
 
         row = CURSOR.execute(sql, (model,)).fetchone()
         return cls.instance_from_db(row) if row else None
+    
+    def factory(self):
+        from models.factory import Factory
+        sql = """
+            SELECT * FROM factories
+            WHERE id = ?
+        """
+        CURSOR.execute(sql, (self.factory_id,),)
+
+        rows = CURSOR.fetchall()
+        return [Factory.instance_from_db(row) for row in rows]

@@ -89,4 +89,13 @@ def delete_car_for_rep(car):
       car.delete()
     else:print("")
 
+def car_factories():
+    _id = input("Enter the car's id:")
+    car = Car.find_by_id(_id)
+    
+    if car:
+        factory = car.factory()
+        print(factory)
+    else: (f"Car's id({_id}) not found!")
+
 Car.create_table()

@@ -46,4 +46,13 @@ def delete_car_rep():
         print(f"Successfuly repaired Car:{_id} {car.model}, {car.year}, {car.weight}, factory id:{car.factory_id}!")
         Car.create(car.model,car.year,car.weight,car.factory_id)
     else:
-        print(f"Car's id({_id}) not found!")  
+        print(f"Car's id({_id}) not found!")
+
+def car_factories():
+    _id = input("Enter the car's id:")
+    car = Reparation.find_by_id(_id)
+    
+    if car:
+        factory = car.factory()
+        print(factory)
+    else: (f"Car's id({_id}) not found!")  

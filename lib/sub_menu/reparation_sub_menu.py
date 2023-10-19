@@ -4,7 +4,8 @@ from function_menu_helper.func_menu_reparation import (
     find_car_rep_by_id,
     find_car_rep_by_model,
     find_car_by_cause,
-    delete_car_rep
+    delete_car_rep,
+    car_factories
 )
 
 from function_menu_helper.func_menu_car import ( delete_car_for_rep, find_car_by_id)
@@ -17,6 +18,7 @@ def reparation_menu_print():
     print("4. Find a car by model")
     print("5. Find a car by cause of repair")
     print("6. Finish a car reparation")
+    print("7. See car's factory")
 
 def reparation_menu():
     while True:
@@ -102,6 +104,21 @@ def reparation_menu():
                     break
                 elif choice == "1":
                     delete_car_rep()
+                else: print("Invalid choice")
+
+        elif choice == "7":
+            car_factories()
+
+            while True:
+                print("Do you want to check another car's factory?")
+                print("0. No")
+                print("1. Yes")
+                choice=input("> ")
+                
+                if choice == "0":
+                    break
+                elif choice == "1":
+                    car_factories()
                 else: print("Invalid choice")
         
         else: print("Invalid choice!")
