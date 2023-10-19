@@ -3,8 +3,10 @@ from models.factory import Factory
 def list_factories():
     
     factories = Factory.get_all()
-    for factory in factories:
-        print(factory)
+    if len(factories)>0:
+        for factory in factories:
+            print(factory)
+    else: print("There is no factory! Please add some!")
 
 def create_factory():
     
@@ -21,7 +23,7 @@ def find_factory_by_id():
     
     _id = input("Enter the factory's id: ")
     factory = Factory.find_by_id(_id)
-    print(factory) if factory else print("Factory couldn't be found!")
+    print(factory) if factory else print(f"Factory {_id} couldn't be found!")
 
 def find_factory_by_name():
     
@@ -67,7 +69,25 @@ def factory_car():
     factory = Factory.find_by_id(_id)
     
     if factory:
-        car = factory.cars()
-        print(car)
+        
+        if len(factory.cars())== 0 and len(factory.cars_rep())==0:
+            print("There are no cars belonging to this factory!")
+            
+        elif len(factory.cars())>0 and len(factory.cars_rep())==0:
+            car = factory.cars()
+            print(car)
+
+        elif len(factory.cars_rep())>0 and len(factory.cars())==0:
+            car = factory.cars_rep()
+            print(car)
+
+        elif len(factory.cars_rep())>0 and len(factory.cars())>0:
+            car = factory.cars()
+            car_rep = factory.cars_rep()
+            print(car)
+            print(car_rep)
+
     else:
         print(f"Factory's id({_id}) not found!")
+
+Factory.create_table()

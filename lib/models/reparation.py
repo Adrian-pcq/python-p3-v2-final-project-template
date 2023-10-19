@@ -39,8 +39,8 @@ class Reparation:
             model TEXT,
             year INT,
             weight FLOAT,
-            factory_id INT
-            )
+            factory_id INTEGER,
+            FOREIGN KEY (factory_id) REFERENCES factories(id))
         """
         CURSOR.execute(sql)
         CONN.commit()
@@ -141,3 +141,5 @@ class Reparation:
 
         row = CURSOR.execute(sql, (cause,)).fetchone()
         return cls.instance_from_db(row) if row else None
+    
+Reparation.create_table()

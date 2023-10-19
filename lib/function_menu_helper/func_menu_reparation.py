@@ -2,9 +2,10 @@ from models.reparation import Reparation
 
 def list_cars_rep():
     cars = Reparation.get_all()
-    
-    for car in cars:
-        print(car)
+    if len(cars)>0:
+        for car in cars:
+            print(car)
+    else: print("There is no car being repaired!")
 
 def create_car_rep(car):
     
@@ -31,7 +32,7 @@ def find_car_by_cause():
     
     cause = input("Enter car's cause for repair: ")
     car = Reparation.find_by_cause(cause)
-    print(car) if car else print(f"Car with this cause:({cause}) couldn't be found")
+    print(car) if car else print(f"Car with :({cause}) couldn't be found")
 
 def delete_car_rep():
     

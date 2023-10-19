@@ -3,18 +3,20 @@ from models.car import Car
 def list_cars():
     
     cars = Car.get_all()
-    for car in cars:
-        print(car)
+    if len(cars)>0:
+        for car in cars:
+            print(car)
+    else: print("There is no car! Please add some!")
 
 def create_car():
     
-    model = input("Enter car's name: ")
-    year = int(input("Enter car's year: "))
-    weight = float(input("Enter car's weight: "))
-    factory_id = int(input("Enter factory's id to which belongns: "))
+    model = input("Enter car's model: ")
+    year = input("Enter car's year: ")
+    weight = input("Enter car's weight: ")
+    factory_id = input("Enter factory's id to which belongns: ")
     
     try:
-        car = Car.create(model,year,weight,factory_id)
+        car = Car.create(model,int(year),float(weight),int(factory_id))
         print(f"Successfuly added: {car}")
     except Exception as exc:
         print("Error adding car:",exc)
@@ -86,3 +88,5 @@ def delete_car_for_rep(car):
     if car:
       car.delete()
     else:print("")
+
+Car.create_table()

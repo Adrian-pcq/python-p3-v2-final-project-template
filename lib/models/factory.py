@@ -21,7 +21,7 @@ class Factory:
         if type(name)==str and len(name):
             self._name = name
         else:
-            raise Exception("The name must be a string with more than 1 character!")
+            raise Exception("The name must be a non-empty string!")
 
     @property
     def country(self):
@@ -32,7 +32,7 @@ class Factory:
         if type(country)==str and len(country):
             self._country =country
         else:
-            raise Exception("The country must be a string with more than 1 character!")
+            raise Exception("The country must be a non-empty string!")
 
     
     @classmethod
@@ -156,6 +156,15 @@ class Factory:
         CURSOR.execute(sql, (self.id,),)
 
         rows = CURSOR.fetchall()
-        return [
-            Car.instance_from_db(row) for row in rows
-        ]
+        return [Car.instance_from_db(row) for row in rows]
+    
+    def cars_rep(self):
+        from models.reparation import Reparation
+        sql = """
+            SELECT * FROM reparations
+            WHERE factory_id = ?
+        """
+        CURSOR.execute(sql, (self.id,),)
+
+        rows = CURSOR.fetchall()
+        return [Reparation.instance_from_db(row) for row in rows]

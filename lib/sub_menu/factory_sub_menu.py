@@ -101,5 +101,16 @@ def factory_menu():
 
         elif choice == "7":
             factory_car()
+            while True:
+                print("Do you want to check another factory's cars?")
+                print("0. No")
+                print("1. Yes")
+                choice = input("> ")
+                
+                if choice == "0":
+                    break
+                elif choice == "1":
+                    factory_car()
+                else: print("Invalid choice!")
 
         else: print("Invalid choice!")

@@ -23,7 +23,7 @@ class Car:
     
     @model.setter
     def model(self,model):
-        if type(model)==str and len(model)>1:
+        if type(model)==str and len(model)>0:
             self._model=model
         else:
             raise Exception("Model must be a non-empty string!")
