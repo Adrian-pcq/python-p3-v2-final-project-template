@@ -25,7 +25,7 @@ def find_car_by_id():
     
     _id = input("Enter car's id: ")
     car = Car.find_by_id(_id)
-    print(car) if car else print("Car couldn't be found!")
+    print(car) if car else print(f"Car id({_id}) couldn't be found!")
     return car
 
 def find_car_by_model():
@@ -59,7 +59,7 @@ def update_car():
         except Exception as exc:
             print("Error updating car:",exc)
     else:
-        print(f"Factory's id({_id}) not found!")
+        print(f"Car id({_id}) not found!")
 
 def delete_car():
     
@@ -82,7 +82,7 @@ def delete_car():
                 break
             else: print("Invalid choice!")
     else:
-        print(f"Car's id({_id}) not found!")
+        print(f"Car id({_id}) not found!")
 
 def delete_car_for_rep(car):
     if car:
@@ -95,7 +95,10 @@ def car_factories():
     
     if car:
         factory = car.factory()
+        print("Car: ")
+        print(car)
+        print("Factory: ")
         print(factory)
-    else: (f"Car's id({_id}) not found!")
+    else: (f"Car id({_id}) not found!")
 
 Car.create_table()

@@ -23,13 +23,13 @@ def find_factory_by_id():
     
     _id = input("Enter the factory's id: ")
     factory = Factory.find_by_id(_id)
-    print(factory) if factory else print(f"Factory {_id} couldn't be found!")
+    print(factory) if factory else print(f"Factory id({_id}) couldn't be found!")
 
 def find_factory_by_name():
     
     name = input("Enter the factory's name: ")
     factory = Factory.find_by_name(name)
-    print(factory) if factory else print(f"Factory {name} couldn't be found")
+    print(factory) if factory else print(f"Factory name({name}) couldn't be found")
 
 def update_factory():
     
@@ -50,7 +50,7 @@ def update_factory():
         except Exception as exc:
             print("Error updating factory:",exc)
     else:
-        print(f"Factory's id({_id}) not found!")
+        print(f"Factory id({_id}) not found!")
 
 def delete_factory():
     
@@ -74,7 +74,7 @@ def delete_factory():
             
             else: print("Invalid choice!")
     else:
-        print(f"Factory's id({_id}) not found!")
+        print(f"Factory id({_id}) not found!")
 
 def factory_car():
     
@@ -84,23 +84,32 @@ def factory_car():
     if factory:
         
         if len(factory.cars())== 0 and len(factory.cars_rep())==0:
-            print("There are no cars belonging to this factory!")
+            print(f"There are no cars belonging to {factory}")
             
         elif len(factory.cars())>0 and len(factory.cars_rep())==0:
+            print("Factory: ")
+            print(factory)
+            print("Cars: ")
             car = factory.cars()
             print(car)
 
         elif len(factory.cars_rep())>0 and len(factory.cars())==0:
+            print("Factory: ")
+            print(factory)
+            print("Cars: ")
             car = factory.cars_rep()
             print(car)
 
         elif len(factory.cars_rep())>0 and len(factory.cars())>0:
+            print("Factory: ")
+            print(factory)
+            print("Cars: ")
             car = factory.cars()
             car_rep = factory.cars_rep()
             print(car)
             print(car_rep)
 
     else:
-        print(f"Factory's id({_id}) not found!")
+        print(f"Factory id({_id}) not found!")
 
 Factory.create_table()
