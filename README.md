@@ -1,22 +1,13 @@
-# Phase 3 Project: Cape Coral Dealer CLI 
+# Phase 3 Project: Dealer CLI 
+It's a CLI APP that contains information about available cars and the factories they belong to. Comes with multiples functionalities for the user. 
 
 ---
 
-## Introduction 
-
-This code uses all the skills learned in this phase:
-- Python fundamentals.
-- Data structures (and more recently, algorithms).
-- Object-oriented programming.
-- Object inheritance.
-- Instance and class attributes and methods.
-- Configuring applications.
-- SQL fundamentals.
-- Table relations in SQL.
-- Object-relational mapping with Python.
-- Building CLIs.
-
-It's a CLI APP that contains information about available cars and the factories they belong to. Comes with multiples functionalities for the user. 
+## Runing the App
+- `cd dealerCLI` for open app's directory.
+- `pipenv install` & `pipenv shell` to settup the virtual envyroment.
+- `python lib/data.py` for seeding the app.
+- `python lib/menu.py` for run the app in the Terminal.
 
 ---
 
