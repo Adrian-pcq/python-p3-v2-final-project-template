@@ -1,5 +1,5 @@
 # Phase 3 Project: Dealer CLI 
-It's a CLI APP that contains information about available cars and the factories they belong to. Comes with multiples functionalities for the user. 
+It's a CLI APP that contains information about available cars and the factories they belong to. Comes with multiples functionalities for the user. **And comes with colors!**
 
 ---
 
