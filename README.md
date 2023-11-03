@@ -6,8 +6,8 @@ It's a CLI APP that contains information about available cars and the factories 
 ## Runing the App
 - `cd dealerCLI` for open app's directory.
 - `pipenv install` & `pipenv shell` to settup the virtual envyroment.
-- `python lib/data.py` for seeding the app.
-- `python lib/menu.py` for run the app in the Terminal.
+- `python dealerCLI/data.py` for seeding the app.
+- `python dealerCLI/menu.py` for run the app in the Terminal.
 
 ---
 
@@ -29,5 +29,5 @@ In summary, the implemented application allows managing factories and cars, been
 
 ## Structure
 
-The `lib/menu.py`file contains the menu were the user can interact with the app, this file uses information from `lib/sub_menu`'s three files: `car_sub_menu.py `, `factory_sub_menu.py ` and  `reparation_sub_menu.py `  to display each menu belonging to each class. Within the `lib/function_menu_helper` folder, there are three files: `func_menu_car.py `, `func_menu_factory.py ` and `func_menu_reparation.py ` where all the functions used in the `sub_menu`'s files are implemented, respectively. The main code, that is, the three Factory, Car, and Reparation classes, is located in the `lib/models` folder. In `lib/data.py` is where the persistent information is stored.
+The `menu.py`file contains the menu were the user can interact with the app, this file uses information from `sub_menu`'s three files: `car_sub_menu.py `, `factory_sub_menu.py ` and  `reparation_sub_menu.py `  to display each menu belonging to each class. Within the `function_menu_helper` folder, there are three files: `func_menu_car.py `, `func_menu_factory.py ` and `func_menu_reparation.py ` where all the functions used in the `sub_menu`'s files are implemented, respectively. The main code, that is, the three Factory, Car, and Reparation classes, is located in the `models` folder. In `data.py` is where the persistent information is stored.
 
